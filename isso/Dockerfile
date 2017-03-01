@@ -4,8 +4,7 @@ LABEL maintainer="Ray Chow <raychow.info@gmail.com>"
 
 ARG ISSO_VER=0.10.6
 
-RUN echo "@community https://nl.alpinelinux.org/alpine/v3.5/community" >> /etc/apk/repositories \
- && BUILD_DEPS=" \
+RUN BUILD_DEPS=" \
     python-dev \
     libffi-dev \
     py2-pip \
@@ -17,7 +16,7 @@ RUN echo "@community https://nl.alpinelinux.org/alpine/v3.5/community" >> /etc/a
     sqlite \
     libressl \
     ca-certificates \
-    tini@community \
+    tini \
  && pip install --no-cache cffi \
  && pip install --no-cache misaka==1.0.2 \
  && pip install --no-cache "isso==${ISSO_VER}" \
